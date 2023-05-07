@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
-
+import 'package:rive_animation/screens/onboding/components/signup_btn.dart';
 import 'components/animated_btn.dart';
 import 'components/sign_in_dialog.dart';
 
@@ -15,8 +15,11 @@ class OnbodingScreen extends StatefulWidget {
 
 class _OnbodingScreenState extends State<OnbodingScreen> {
   late RiveAnimationController _btnAnimationController;
+  late RiveAnimationController _btnSignUpController;
 
   bool isShowSignInDialog = false;
+  bool isShowSignUpDialog = false;
+
 
   @override
   void initState() {
@@ -24,6 +27,11 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
       "active",
       autoplay: false,
     );
+    _btnSignUpController= OneShotAnimation(
+      "active",
+      autoplay: false,
+    );
+
     super.initState();
   }
 
@@ -111,6 +119,29 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                         );
                       },
                     ),
+                    // SignUpBtn(
+                    //   btnAnimationController: _btnSignUpController,
+                    //   press: () {
+                    //     _btnSignUpController.isActive = true;
+                    //
+                    //     Future.delayed(
+                    //       const Duration(milliseconds: 800),
+                    //           () {
+                    //         setState(() {
+                    //           isShowSignUpDialog = true;
+                    //         });
+                    //         showSignupDialog(
+                    //           context,
+                    //           onValue: (_) {
+                    //             setState(() {
+                    //               isShowSignUpDialog = false;
+                    //             });
+                    //           },
+                    //         );
+                    //       },
+                    //     );
+                    //   },
+                    // ),
                     const Padding(
                       padding: EdgeInsets.symmetric(vertical: 24),
                       child: Text(
