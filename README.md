@@ -1,4 +1,4 @@
-# Animated App with Rive and Flutter
+# I'meye for Blind
 
 **Fonts**
 
