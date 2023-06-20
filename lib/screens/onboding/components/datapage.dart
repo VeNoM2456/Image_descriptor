@@ -17,7 +17,8 @@ class _DataPageState extends State<DataPage> {
 
   Future<void> fetchData() async {
     try {
-      final response = await Dio().get('http://abb6-27-61-3-212.ngrok-free.app/get_processed_image');
+      final response = await Dio()
+          .get('http://abb6-27-61-3-212.ngrok-free.app/get_processed_image');
 
       if (response.statusCode == 200) {
         setState(() {
@@ -38,6 +39,7 @@ class _DataPageState extends State<DataPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Data Page'),
+        backgroundColor: Colors.transparent,
       ),
       body: ListView.builder(
         itemCount: data.length,
@@ -51,12 +53,13 @@ class _DataPageState extends State<DataPage> {
             child: ListTile(
               leading: imageUrl != null
                   ? Image.network(
-                imageUrl,
-                width: 50,
-                height: 50,
-                fit: BoxFit.cover,
-              )
-                  : Container(width: 50, height: 50), // Placeholder for no image
+                      imageUrl,
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.cover,
+                    )
+                  : Container(
+                      width: 50, height: 50), // Placeholder for no image
               title: Text(caption ?? ''),
               subtitle: Text(time ?? ''),
             ),

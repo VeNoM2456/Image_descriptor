@@ -11,7 +11,6 @@ class ImageFromURL extends StatefulWidget {
     required this.datetime,
   }) : super(key: key);
 
-
   final String title;
   final Color color;
   final String imageUrl;
@@ -53,7 +52,7 @@ class _ImageFromURLState extends State<ImageFromURL> {
                   child: CircularProgressIndicator(
                     value: loadingProgress.expectedTotalBytes != null
                         ? loadingProgress.cumulativeBytesLoaded /
-                        loadingProgress.expectedTotalBytes!
+                            loadingProgress.expectedTotalBytes!
                         : null,
                   ),
                 );
@@ -76,9 +75,9 @@ class _ImageFromURLState extends State<ImageFromURL> {
                 Text(
                   widget.title,
                   style: Theme.of(context).textTheme.headline6!.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
                 SizedBox(height: 8),
                 Row(
@@ -89,7 +88,9 @@ class _ImageFromURLState extends State<ImageFromURL> {
                         color: Colors.white70,
                       ),
                     ),
-                    TextButton(onPressed:()=>{speak(widget.title)}, child: Icon(CupertinoIcons.speaker_2_fill))
+                    TextButton(
+                        onPressed: () => {speak(widget.title)},
+                        child: Icon(CupertinoIcons.speaker_2_fill))
                   ],
                 ),
               ],
